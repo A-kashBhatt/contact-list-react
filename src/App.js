@@ -1,7 +1,26 @@
-
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [name, setName] = useState('');
+  const [contact, setContact] = useState('');
+  const [contactList, setContactList] = useState([]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(name);
+    // console.log(contact);
+    contactList.push({
+      name,
+      contact
+    })
+    setContactList({
+      contactList
+    });
+
+  }
+
+
   return (
     <>
       <h1 className="heading">
@@ -28,13 +47,13 @@ function App() {
         </ul>
       </div>
 
-      <form action="/add_contact" method="post">
+      <form >
         <div className="input-box">
-          <input className="input-name" type="text" placeholder="Enter name" required name="name" />
-          <input className="input-phone" type="number" placeholder="Enter Phone" required name="phone" />
+          <input className="input-name" type="text" placeholder="Enter name" required name="name" onChange={(e) => setName(e.target.value)} />
+          <input className="input-phone" type="number" placeholder="Enter Phone" required name="phone" onChange={(e) => setContact(e.target.value)} />
         </div>
 
-        <button className="add-btn" type="submit">Add</button>
+        <button onClick={handleSubmit} className="add-btn" type="submit">Add</button>
       </form>
     </>
   );
