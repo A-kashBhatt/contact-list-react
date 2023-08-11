@@ -25,6 +25,11 @@ function App() {
     return;
   }
 
+  const handleDelete = (index) => {
+    // console.log(index);
+
+    setContactList(contactList.filter((contact, idx) => index !== idx));
+  }
 
   return (
     <>
@@ -36,9 +41,9 @@ function App() {
         <ul type="none" className="contact-list">
           {
             // console.log(contactList)
-            contactList.map((contactItem) => {
+            contactList.map((contactItem, index) => {
               return (
-                <li>
+                <li key={index}>
                   <div className="details-container">
                     <span>
                       <i className="fa-solid fa-user"></i>
@@ -47,7 +52,7 @@ function App() {
                     <span>{contactItem.contact}</span>
                   </div>
 
-                  <a href="/delete_contact/?id=<%=i._id%>" className="delete-btn">
+                  <a onClick={() => { handleDelete(index) }} className="delete-btn">
                     <i class="fa-sharp fa-solid fa-xmark" ></i>
                   </a>
                 </li>
