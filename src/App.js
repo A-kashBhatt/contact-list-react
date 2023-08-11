@@ -10,9 +10,15 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(name);
-    // console.log(contact);
-    // console.log(typeof contactList);
+    if (contact.length !== 10 || contact[0] < '6') {
+      console.log("length is incorrect")
+      return;
+    }
+    if (name.length === 0) {
+      console.log("name is not given")
+      return;
+    }
+
     contactList.push({
       name,
       contact
