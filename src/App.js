@@ -15,9 +15,9 @@ function App() {
             <div className="details-container">
               <span>
                 <i className="fa-solid fa-user"></i>
-
+                chomu
               </span>
-              <span></span>
+              <span>7053541786</span>
             </div>
 
             <a href="/delete_contact/?id=<%=i._id%>" className="delete-btn">

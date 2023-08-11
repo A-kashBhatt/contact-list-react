@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+}
+
+.heading {
+    text-align: center;
+    font-family: sans-serif;
+    color: black;
+    margin-top: 50px;
+}
+
+.container {
+    text-align: center;
+    margin: auto;
+    font-family: sans-serif;
+    width: 35%;
+}
+
+.contact-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    height: 35px;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    border-bottom: 3px solid white;
+}
+
+.contact-list li:hover {
+    background-color: brown;
+}
+
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.delete-btn {
+    margin: 2px;
+    width: 10%;
+    text-align: center;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 40%;
+}
+
+.input-box input {
+    width: 45%;
+    height: 30px;
+}
+
+.add-btn {
+    width: 10%;
+    font-size: 1.2rem;
+    height: 30px;
+    border: none;
+    background-color: blue;
+    color: white;
+    margin-left: 57%;
+    font-weight: bold;
+    margin-top: 5px;
+}
