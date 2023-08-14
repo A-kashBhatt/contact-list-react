@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import Noty from "noty";
+import { toast } from 'react-toastify';
 import './App.css';
 
 function App() {
@@ -11,11 +13,16 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (contact.length !== 10 || contact[0] < '6') {
-      console.log("length is incorrect")
+      // new Noty({
+      //   text: "Contact length should be 10"
+      // }).show();
+      toast('Contact length should be 10');
       return;
     }
     if (name.length === 0) {
-      console.log("name is not given")
+      new Noty({
+        text: "Name is not present"
+      }).show();
       return;
     }
 
@@ -32,7 +39,6 @@ function App() {
   }
 
   const handleDelete = (index) => {
-    // console.log(index);
 
     setContactList(contactList.filter((contact, idx) => index !== idx));
   }
